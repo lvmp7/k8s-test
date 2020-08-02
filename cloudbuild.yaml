@@ -1,0 +1,14 @@
+steps:
+
+- id: 'Testes'
+  name: "gcr.io/cloud-builders/go"
+  args: ["test"]
+  env: ["GOPATH=./app/web/"]
+
+- id: 'Build images'
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/go-web:0.0.1', '-t', 'gcr.io/$PROJECT_ID/go-web:latest', './app']
+  
+images:
+- 'gcr.io/$PROJECT_ID/go-web:latest'
+- 'gcr.io/$PROJECT_ID/go-web:0.0.1'
