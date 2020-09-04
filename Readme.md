@@ -18,3 +18,9 @@
    -> aplicar persistent-volume.yaml
    -> aplicar deployment.yaml
    -> aplicar service.yaml
+
+
+   ---
+   Go Web
+   - Image
+    -> lvmp7/codeeducation-web
